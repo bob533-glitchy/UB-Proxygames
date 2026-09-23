@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Repository Proxy</title>
+</head>
+<body>
+    <h1>Scramjet Proxy Gateway</h1>
+    <input type="text" id="url-input" placeholder="Enter URL here (e.g., https://google.com)">
+    <button id="launch-btn">Go</button>
+
+    <!-- MANDATORY ORDER: Load BareMux scripts and your chosen transport protocol first -->
+    <script src="/baremux/index.js"></script>
+    
+    <!-- Load the main Scramjet client bundle -->
+    <script src="/scram/scramjet.all.js"></script>
+    
+    <!-- Load your registration script -->
+    <script src="/index.js"></script>
+    <script>
+        document.getElementById('launch-btn').addEventListener('click', () => {
+            const url = document.getElementById('url-input').value;
+            launchURL(url);
+        });
+    </script>
+</body>
+</html>
